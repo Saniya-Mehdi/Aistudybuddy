@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Study Buddy</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>📘 AI Study Buddy</h1>
+    <p>Upload your PDF to get a summary and MCQs.</p>
+
+    <form action="/upload_pdf" method="post" enctype="multipart/form-data">
+        <div class="upload-box">
+            <input type="file" name="file" required>
+        </div>
+        <br>
+        <button type="submit">🚀 Upload & Process</button>
+    </form>
+
+    {% if file_id %}
+        <div class="progress" id="progress">Processing...</div>
+
+        <h2>📌 Summary</h2>
+        <div class="output-box" id="summary"></div>
+
+        <h2>📝 MCQs</h2>
+        <div class="output-box" id="mcqs"></div>
+
+        <script>
+            async function pollProgress() {
+                const res = await fetch(`/progress/{{ file_id }}`);
+                const data = await res.json();
+
+                document.getElementById("progress").innerText = data.status;
+
+                if (data.status === "Completed") {
+                    document.getElementById("summary").innerText = data.summary;
+                    document.getElementById("mcqs").innerText = data.mcqs;
+                } else {
+                    setTimeout(pollProgress, 2000);
+                }
+            }
+            pollProgress();
+        </script>
+    {% endif %}
+</div>
+</body>
+</html>

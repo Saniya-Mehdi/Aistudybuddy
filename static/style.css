@@ -1,0 +1,62 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #f5f7fb;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+h1, h2 {
+    color: #2c3e50;
+}
+
+.upload-box {
+    border: 2px dashed #4c6ef5;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    background: #f8f9ff;
+    cursor: pointer;
+}
+
+.upload-box:hover {
+    background: #eef1ff;
+}
+
+button {
+    background: #4c6ef5;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3b5bdb;
+}
+
+.progress {
+    margin-top: 20px;
+    padding: 12px;
+    background: #edf2ff;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.output-box {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f9fafb;
+    border-radius: 10px;
+    white-space: pre-wrap;
+}

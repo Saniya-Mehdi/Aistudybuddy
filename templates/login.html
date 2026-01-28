@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - AI Study Buddy</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container" style="max-width: 400px;">
+    <h1 style="text-align:center;">🔐 AI Study Buddy</h1>
+    <p style="text-align:center; color:#555;">
+        Sign in to continue
+    </p>
+
+    <form action="/login" method="post">
+        <label>Username</label><br>
+        <input type="text" name="username" required
+               style="width:100%; padding:10px; margin-top:6px; margin-bottom:15px;">
+
+        <label>Password</label><br>
+        <input type="password" name="password" required
+               style="width:100%; padding:10px; margin-top:6px; margin-bottom:20px;">
+
+        <button type="submit" style="width:100%;">Login</button>
+    </form>
+
+    <p style="text-align:center; margin-top:15px;">
+        Don’t have an account?
+        <a href="/register" style="color:#4c6ef5;">Register</a>
+    </p>
+
+    <p style="text-align:center; color:#999; font-size:13px;">
+        Demo mode · No real authentication
+    </p>
+</div>
+</body>
+</html>
