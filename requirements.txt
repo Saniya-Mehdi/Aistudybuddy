@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+PyPDF2
+pdf2image
+pytesseract
+jinja2
+python-multipart
+requests
